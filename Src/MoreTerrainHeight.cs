@@ -120,7 +120,7 @@ namespace MoreTerrainHeight
         public static bool changeHeight(ref int __result, LandPatch __instance, int cornerIndex, float delta, bool checkCollisions = true)
         {
             float new_terrain_min = 0f; // Originally 0f
-            float new_terrain_max = 64f; // Originally 16f
+            float new_terrain_max = 256f; // Originally 16f
 
             FieldInfo newHeightsField = typeof(LandPatch).GetField("newHeights", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static);
             float[] newHeights;
