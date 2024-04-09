@@ -9,13 +9,13 @@ namespace MoreTerrainHeight
 {
     public class MTH : AbstractMod, IModSettings
     {
-        public const string VERSION_NUMBER = "240404";
+        public const string VERSION_NUMBER = "v1.0";
 
         public override string getIdentifier() => "MoreTerrainHeight";
 
-        public override string getName() => "More Terrain Height";
+        public override string getName() => "Improved Landscape Height";
 
-        public override string getDescription() => @"Beeg tall terrain.";
+        public override string getDescription() => @"Mod Inventor/Upkeep: RavenStryker" + Environment.NewLine + "Project Author: ChrisBradel" + Environment.NewLine + "Description: Enhance your scenarios with more dynamic landscape! Increases the height of the landscape from the default 16 units, up to now 30 units!";
 
         public override string getVersionNumber() => VERSION_NUMBER;
 
@@ -120,7 +120,7 @@ namespace MoreTerrainHeight
         public static bool changeHeight(ref int __result, LandPatch __instance, int cornerIndex, float delta, bool checkCollisions = true)
         {
             float new_terrain_min = 0f; // Originally 0f
-            float new_terrain_max = 256f; // Originally 16f
+            float new_terrain_max = 30f; // Originally 16f
 
             FieldInfo newHeightsField = typeof(LandPatch).GetField("newHeights", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static);
             float[] newHeights;
