@@ -5,17 +5,17 @@ using System.IO;
 using System.Reflection;
 using UnityEngine;
 
-namespace MoreTerrainHeight
+namespace ImprovedLandscapeHeight
 {
     public class MTH : AbstractMod, IModSettings
     {
         public const string VERSION_NUMBER = "v1.0";
 
-        public override string getIdentifier() => "MoreTerrainHeight";
+        public override string getIdentifier() => "ImprovedLandscapeHeight";
 
         public override string getName() => "Improved Landscape Height";
 
-        public override string getDescription() => @"Mod Inventor/Upkeep: RavenStryker" + Environment.NewLine + "Project Author: ChrisBradel" + Environment.NewLine + "Description: Enhance your scenarios with more dynamic landscape! Increases the height of the landscape from the default 16 units, up to now 30 units!";
+        public override string getDescription() => @"Mod Inventor/Upkeep: RavenStryker" + Environment.NewLine + "Project Author: ChrisBradel" + Environment.NewLine + "Description: Improve your scenarios with a more dynamic landscape! Increases the default landscape height from 16 units, to 30 units!";
 
         public override string getVersionNumber() => VERSION_NUMBER;
 
@@ -36,10 +36,10 @@ namespace MoreTerrainHeight
         {
             if (debug_mode || always_show)
             {
-                Debug.LogWarning("MoreTerrainHeight Units: " + debug_string);
+                Debug.LogWarning("ImprovedLandscapeHeight Units: " + debug_string);
 
                 if (_local_mods_directory != "")
-                    File.AppendAllText(_local_mods_directory + "/MoreTerrainHeight.txt", "MoreTerrainHeight: " + debug_string + "\n");
+                    File.AppendAllText(_local_mods_directory + "/ImprovedLandscapeHeight.txt", "ImprovedLandscapeHeight: " + debug_string + "\n");
             }
 
             if (File.Exists(_local_mods_directory + "/mth_debug"))
@@ -107,7 +107,7 @@ namespace MoreTerrainHeight
     }
 
     [HarmonyPatch]
-    public class MoreTerrainHeightPatch
+    public class ImprovedLandscapeHeightPatch
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("CodeQuality", "IDE0051:Remove unused private members", Justification = "Trust me, it's used. It's found by Harmony and not referred to by this mod directly.")]
         private static MethodBase TargetMethod() => AccessTools.Method(typeof(LandPatch), "changeHeight", parameters: new Type[]
