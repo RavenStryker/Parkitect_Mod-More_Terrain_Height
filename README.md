@@ -1,4 +1,4 @@
-# Enhanced Landscape Height
+# Improved Landscape Height
 
 Mod Inventor/Upkeep: RavenStryker
 
